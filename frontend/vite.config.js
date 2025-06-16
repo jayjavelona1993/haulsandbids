@@ -7,11 +7,18 @@ import path from 'path';
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
+    host: true,
     proxy: {
-      '/api': 'http://localhost:8000',
-      '/graphql': 'http://localhost:8000',
-    }
+        '/graphql': {
+            target: 'http://localhost:8000',
+        },
+        '/api': {
+            target: 'http://localhost:8000',
+            changeOrigin: true,
+        },
+    },
   },
+
   resolve: {
     alias: {
         '@': path.resolve(__dirname, 'src')

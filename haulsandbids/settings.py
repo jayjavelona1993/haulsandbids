@@ -72,15 +72,46 @@ TEMPLATES = [
 WSGI_APPLICATION = 'haulsandbids.wsgi.application'
 
 
+GRAPHENE = {
+    'SCHEMA': 'api.graphql.schema.main.schema',
+    'MIDDLEWARE': [
+        'graphene_django.debug.DjangoDebugMiddleware',
+    ],
+}
+
+
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'postgresql://postgres:[JP7bnPDz0VH19yWX]@db.vjhwrqunphxeibmmjlvb.supabase.co:5432/postgres',
+        'NAME': 'public',
+        'PASSSWORD': 'JP7bnPDz0VH19yWX'
+    }
+}
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'JP7bnPDz0VH19yWX',
+        'HOST': 'db.vjhwrqunphxeibmmjlvb.supabase.co',
+        'PORT': '5432',
+    }
+}
+
 
 
 # Password validation

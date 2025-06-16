@@ -1,4 +1,5 @@
 import {NavigationMenu, NavigationMenuContent, NavigationMenuLink, NavigationMenuList, NavigationMenuItem} from "@/components/ui/navigation-menu.jsx";
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
 
@@ -6,13 +7,17 @@ const NavBar = () => {
     <NavigationMenu>
         <NavigationMenuList>
             <NavigationMenuItem>
-                <NavigationMenuLink>
-                    Hauls
+                <NavigationMenuLink asChild>
+                    <Link to={'/'}>
+                        Hauls
+                    </Link>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-                <NavigationMenuLink>
-                    List Your Pickup
+                <NavigationMenuLink asChild>
+                    <Link to={'/create_listing'}>
+                        List Your Pickup
+                    </Link>
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -23,6 +28,13 @@ const NavBar = () => {
             <NavigationMenuItem>
                 <NavigationMenuLink>
                     Leaderboard
+                </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                    <Link to={'/sign_up'}>
+                        Sign Up
+                    </Link>
                 </NavigationMenuLink>
             </NavigationMenuItem>
         </NavigationMenuList>

@@ -1,4 +1,4 @@
-import {createContext, useContext} from "react";
+import {createContext, useContext, useMemo} from "react";
 
 const HomeContext = createContext(null);
 const Home = () => {
@@ -7,6 +7,14 @@ const Home = () => {
     <HomeContext.Provider value={{}}>
 
     </HomeContext.Provider>);
+};
+
+const useFeaturedHaul = () => {
+
+};
+
+const useHauls = () => {
+
 };
 
 export const useHome = () => useContext(HomeContext);
